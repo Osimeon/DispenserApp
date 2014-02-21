@@ -1,0 +1,41 @@
+<com.dsw.dispenserapp.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#f8f9fe"
+    tools:ignore="HardcodedText" >
+
+    <!-- Create Button -->
+
+    <Button
+        android:id="@+id/btn_create"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_create"
+        android:text="Create Issue" />
+
+    <!-- Resolve Button -->
+
+    <Button
+        android:id="@+id/btn_resolve"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_resolve"
+        android:text="Resolve Issues" /> 
+        
+    <!-- Waterpoint Button -->
+    
+    <Button
+        android:id="@+id/btn_waterpoint"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_waterpoint"
+        android:text="Waterpoints" />
+    
+    <!-- Miscellaneous -->
+    
+    <Button
+        android:id="@+id/btn_misc"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_misc"
+        android:text="Miscellaneous" />
+    
+</com.dsw.dispenserapp.DashboardLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText,UselessParent,SpUsage,Deprecated,TextFields" >
+
+    <RelativeLayout
+        android:id="@+id/resolveMyIssueTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sync_bg" >
+
+        <TextView
+            android:id="@+id/txtResolveMyIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Resolve Isuse"
+            android:textColor="#000000"
+            android:textSize="25dip"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    
+    <ScrollView
+	    android:layout_width="fill_parent"
+	    android:layout_height="match_parent"
+	    android:padding="10dp">
+        <RelativeLayout 
+		    android:layout_height="wrap_content"
+		    android:layout_width="fill_parent">
+		    
+            <!-- Issue Part -->
+            <TextView
+			    android:id="@+id/resolveMyIssueID"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+				android:visibility="gone" />
+		    
+		    <!-- Waterpoint Part -->
+		    <TextView
+			    android:id="@+id/resolveMyIssueWpName"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Waterpoint Name"
+			    android:textAppearance="?android:attr/textAppearanceLarge"
+			    android:layout_marginBottom="10dip"
+			    android:textColor="#2F4F4F" />
+		    <TextView
+			    android:id="@+id/resolveMyIssueWpID"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+				android:visibility="gone" />
+		    <EditText
+                android:id="@+id/txtResolveMyIssueWpName"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:background="@layout/roundedsearch"
+                android:layout_height="40dip"
+                android:hint="Waterpoint Name"
+                android:padding="8dip"
+                android:layout_below="@id/resolveMyIssueWpName"
+                android:editable="false" />
+            
+            <!-- Issue Type Part -->
+            <TextView
+			    android:id="@+id/resolveMyIssueTypeName"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Issue Type"
+			    android:textAppearance="?android:attr/textAppearanceLarge"
+			    android:layout_marginBottom="10dip"
+			    android:textColor="#2F4F4F"
+			    android:layout_below="@id/txtResolveMyIssueWpName" />
+		    <TextView
+			    android:id="@+id/resolveMyIssueTypeID"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+				android:visibility="gone" />
+		    <EditText
+                android:id="@+id/txtResolveMyIssueTypeName"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:background="@layout/roundedsearch"
+                android:layout_height="40dip"
+                android:hint="Issue Type"
+                android:padding="8dip"
+                android:layout_below="@id/resolveMyIssueTypeName"
+                android:editable="false"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:ems="20" />
+		    
+		    <!-- Date Created Part -->
+		    <TextView
+			    android:id="@+id/resolveMyIssueDate"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Date Issue Created"
+			    android:textAppearance="?android:attr/textAppearanceLarge"
+			    android:layout_marginBottom="10dip"
+			    android:textColor="#2F4F4F"
+			    android:layout_below="@id/txtResolveMyIssueTypeName" />
+		    <EditText
+                android:id="@+id/txtResolveMyIssueDate"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:background="@layout/roundedsearch"
+                android:layout_height="40dip"
+                android:hint="Date Issue Created"
+                android:padding="8dip"
+                android:layout_below="@id/resolveMyIssueDate"
+                android:editable="false" />
+		    
+		    <!-- Issue ID -->
+		    <TextView
+		         android:id="@+id/issueId"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content"
+		         android:visibility="gone" />
+		    
+		    <!-- Issue Resolved Part -->
+		    <TextView
+			    android:id="@+id/resolveMyIssueResolved"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Issue Resolved"
+			    android:textAppearance="?android:attr/textAppearanceLarge"
+			    android:layout_marginBottom="10dip"
+			    android:textColor="#2F4F4F"
+			    android:layout_below="@id/txtResolveMyIssueDate" />
+		    <RadioGroup 
+			    android:id="@+id/funcResolved" 
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_below="@id/resolveMyIssueResolved"
+				android:layout_marginBottom="15dip"
+				android:background="@layout/roundedsearch" >
+				<RadioButton 
+				    android:id="@+id/resolvedIssueResolved" 
+				    android:text="Yes"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:checked="true"/>
+				<RadioButton
+			    	android:id="@+id/resolvedIssueNotResolved"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+			    	android:text="No" />
+			</RadioGroup>
+			<Button
+                android:id="@+id/btnResolveIssue"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="Resolve Issue"
+                android:textColor="#000000"
+                android:textSize="26dip"
+                android:layout_below="@id/funcResolved" />
+		</RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

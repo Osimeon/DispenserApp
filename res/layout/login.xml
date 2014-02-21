@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    tools:ignore="TextFields,HardcodedText,SpUsage,Deprecated,ContentDescription" >
+	    
+    <RelativeLayout 
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content" android:background="#ffffff">
+
+        <!-- Header  Starts -->
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip" >
+
+            <!-- Logo Start -->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/logo" />
+            <!-- Logo Ends -->
+        </LinearLayout>
+
+        <!-- Login Form -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:layout_weight="5.34"
+            android:orientation="vertical"
+            android:padding="10dip"
+            tools:ignore="ObsoleteLayoutParam,InefficientWeight" >
+
+            <!-- Staff ID Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Staff Number"
+                android:textColor="#000000"
+                android:textSize="26dip" />
+
+            <EditText
+                android:id="@+id/loginNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:inputType="number" />
+
+            <!-- Password Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="#000000"
+                android:textSize="26dip" />
+
+            <EditText
+                android:id="@+id/loginPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:password="true"
+                android:singleLine="true" />
+            
+            <TextView
+	            android:id="@+id/login_error"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:padding="10dip"
+	            android:textColor="#e30000"
+	            android:textStyle="bold" />
+
+            <!-- Login button -->
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="Login"
+                android:textColor="#000000"
+                android:textSize="26dip" >
+
+                <requestFocus />
+            </Button>
+        </LinearLayout>
+        <!-- Login Form Ends -->
+
+    </RelativeLayout>
+
+</ScrollView>

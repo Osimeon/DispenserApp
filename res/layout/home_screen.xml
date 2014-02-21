@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText,SpUsage,UselessParent,DuplicateIds,ContentDescription" >
+
+    <RelativeLayout
+        android:id="@+id/btnSyncAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sync_bg" >
+
+        <TextView
+            android:id="@+id/txtSyncAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Issue Tracker Main Menu"
+            android:textColor="#000000"
+            android:textSize="25dip"
+            android:textStyle="bold" />
+    </RelativeLayout>
+	
+    <include layout="@layout/dashboard" />
+    
+    <!-- Footer -->
+    <RelativeLayout
+        android:id="@+id/relativeLogout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/sync_bg" >
+        <LinearLayout android:id="@+id/thumbnail" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"	
+	        android:layout_alignParentLeft="true"
+	        android:background="@drawable/image_bg" 
+		    android:layout_marginRight="5dip"
+		    android:layout_marginLeft="5dip"
+		    android:layout_marginTop="5dip"
+		    android:layout_marginBottom="5dip">
+        
+		<ImageView     
+			android:id="@+id/list_image"   
+	        android:layout_width="35dip"
+	        android:layout_height="35dip"
+	        android:src="@drawable/pignon"/>
+        
+		</LinearLayout>
+        <TextView
+            android:id="@+id/logoutId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout (user@mail.com)"
+            android:textSize="15dip"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/thumbnail"
+            android:textColor="#A00000" />
+    </RelativeLayout>
+</LinearLayout>
