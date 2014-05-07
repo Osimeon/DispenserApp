@@ -16,8 +16,8 @@ import com.dsw.dispenserdata.Users;
 public class UserFunctions {
 	
     private JSONParser jsonParser;
-    //private static String universalURL = "http://62.24.108.175:81/ipa_mis/mobileapp/index.php";
-    private static String universalURL = "http://192.168.3.76:81/ipa_mis/mobileapp/index.php";
+    private static String universalURL = "http://62.24.108.175:81/ipa_mis/mobileapp/index.php";
+    //private static String universalURL = "http://192.168.3.76:81/ipa_mis/mobileapp/index.php";
      
     private static String login_tag = "login";
     private static String waterpoints_tag = "waterpoints";
