@@ -36,6 +36,6 @@
         android:id="@+id/btn_misc"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/btn_misc"
-        android:text="Miscellaneous" />
+        android:text="Prototype" />
     
 </com.dsw.dispenserapp.DashboardLayout>

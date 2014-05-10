@@ -7,18 +7,18 @@
     tools:ignore="HardcodedText,SpUsage,ObsoleteLayoutParam,Deprecated" >
 
     <RelativeLayout
-        android:id="@+id/createIssueTop"
+        android:id="@+id/createIssueTopPrototype"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/sync_bg" >
 
         <TextView
-            android:id="@+id/txtCreateIssue"
+            android:id="@+id/txtCreateIssuePrototype"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Create Issue"
+            android:text="Create Issue - Prototype"
             android:textColor="#A00000"
             android:textSize="25dip"
             android:textStyle="bold" />
@@ -57,7 +57,7 @@
 		        android:textColor="#2F4F4F" />
 		
 		    <Spinner
-		        android:id="@+id/spinnerIssueType"
+		        android:id="@+id/spinnerIssueTypePrototype"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_marginLeft="8dip"
@@ -66,7 +66,7 @@
 		        android:prompt="@string/spinner_title" />
 		    
 		    <TextView
-			    android:id="@+id/dispenserFunctional"
+			    android:id="@+id/dispenserFunctionalPrototype"
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:text="Dispenser Functional"
@@ -75,27 +75,27 @@
 			    android:textColor="#2F4F4F" />
 		    
 		    <RadioGroup 
-			    android:id="@+id/funcGroup" 
+			    android:id="@+id/funcGroupPrototype" 
 			    android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
 				android:layout_marginBottom="15dip"
 				android:background="@layout/roundedsearch" >
 				<RadioButton 
-				    android:id="@+id/disFunctional" 
+				    android:id="@+id/disFunctionalPrototype" 
 				    android:text="Yes"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:checked="true"/>
 				<RadioButton
-			    	android:id="@+id/dispNonFunctional"
+			    	android:id="@+id/dispNonFunctionalPrototype"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
 			    	android:text="No" />
-			</RadioGroup>  
-		    
+			</RadioGroup> 
+		      
 		    <EditText
-			    android:id="@+id/txtUserComments"
+			    android:id="@+id/txtUserCommentsPrototype"
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:layout_alignParentLeft="true"
@@ -109,7 +109,7 @@
 			</EditText>
 			
 		    <Button
-                android:id="@+id/btnCreateIssue"
+                android:id="@+id/btnCreateIssuePrototype"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"

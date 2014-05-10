@@ -29,7 +29,7 @@ import com.dsw.dispenserdata.IssueTypes;
 import com.dsw.dispenserdata.Users;
 
 @SuppressLint("NewApi")
-public class CreateIssueActivity extends Activity{
+public class PrototypeCreateIssueActivity extends Activity{
 	
 	public static final String TAG_WATERPOINT_ID = "waterpoint_id";
 	public static final String TAG_WATERPOINT_NAME = "waterpoint_name";
@@ -53,16 +53,16 @@ public class CreateIssueActivity extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.create_issue_activity);
+		setContentView(R.layout.prototype_create_issue_activity);
 		
 		Intent in = getIntent();
 		waterId = in.getStringExtra(TAG_WATERPOINT_ID);
 		String waterpointName = in.getStringExtra(TAG_WATERPOINT_NAME);
 
-		spinnerIssueTypes = (Spinner) findViewById(R.id.spinnerIssueType);
+		spinnerIssueTypes = (Spinner) findViewById(R.id.spinnerIssueTypePrototype);
 		
-		Button createIssue = (Button) findViewById(R.id.btnCreateIssue);
-		TextView wpName = (TextView) findViewById(R.id.txtCreateIssue);
+		Button createIssue = (Button) findViewById(R.id.btnCreateIssuePrototype);
+		TextView wpName = (TextView) findViewById(R.id.txtCreateIssuePrototype);
 		
 		wpName.setText("Waterpoint Name: " + waterpointName);
 		
@@ -107,8 +107,8 @@ public class CreateIssueActivity extends Activity{
 	 * Make toast if false
 	 */
 	public void invalidate(){
-		EditText comments = (EditText) findViewById(R.id.txtUserComments);
-		RadioGroup dispFunc = (RadioGroup) findViewById(R.id.funcGroup);
+		EditText comments = (EditText) findViewById(R.id.txtUserCommentsPrototype);
+		RadioGroup dispFunc = (RadioGroup) findViewById(R.id.funcGroupPrototype);
 		
 		RadioButton radiovalue =  (RadioButton)findViewById(dispFunc.getCheckedRadioButtonId());
 		
@@ -116,7 +116,7 @@ public class CreateIssueActivity extends Activity{
 		String status = radiovalue.getText().toString();
 		
 		if((waterId.isEmpty())||(isTypeId.isEmpty())||status.isEmpty()){
-			Toast.makeText(CreateIssueActivity.this, "Please Fill All Fields Before Proceeding", Toast.LENGTH_LONG).show();
+			Toast.makeText(PrototypeCreateIssueActivity.this, "Please Fill All Fields Before Proceeding", Toast.LENGTH_LONG).show();
 		}
 		
 		else{			
@@ -135,11 +135,11 @@ public class CreateIssueActivity extends Activity{
 	public void beforeSync(){
     	cd = new ConnectionDetector(getApplicationContext());
 		if (!cd.isConnectingToInternet()) {
-			alert.showAlertDialog(CreateIssueActivity.this,"Internet Connection Error","Please connect to a working Internet connection", false);
+			alert.showAlertDialog(PrototypeCreateIssueActivity.this,"Internet Connection Error","Please connect to a working Internet connection", false);
 			return;
 		}
 		
-		AlertDialog.Builder alertDialog = new AlertDialog.Builder(CreateIssueActivity.this);
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(PrototypeCreateIssueActivity.this);
         alertDialog.setTitle("Resolve Issue");
         alertDialog.setMessage("Do You Want To Resolve This Issue?");
         alertDialog.setIcon(R.drawable.success);
@@ -165,7 +165,7 @@ public class CreateIssueActivity extends Activity{
 	 * User will be notified
 	 */
 	public void serverError(){
-    	alert.showAlertDialog(CreateIssueActivity.this,"Network Error","Could Not Establish Connection To Server, Check Network", false);
+    	alert.showAlertDialog(PrototypeCreateIssueActivity.this,"Network Error","Could Not Establish Connection To Server, Check Network", false);
 		return;
     }
 	
@@ -190,7 +190,7 @@ public class CreateIssueActivity extends Activity{
 		
 		@Override
         protected void onPreExecute(){
-			dialog = new ProgressDialog(CreateIssueActivity.this);
+			dialog = new ProgressDialog(PrototypeCreateIssueActivity.this);
 			dialog.setIndeterminate(true);
 			dialog.setTitle("Create Issue");
 			dialog.setMessage("Processing...");
@@ -200,7 +200,7 @@ public class CreateIssueActivity extends Activity{
 		
 		@Override
 		protected String doInBackground(String... params) {
-			JSONObject json = funcs.createIssue(waterId, isTypeId, userComments, dispStatus, userAssigned, resolved, getApplicationContext());
+			JSONObject json = funcs.createIssuePrototype(waterId, isTypeId, userComments, dispStatus, userAssigned, resolved,getApplicationContext());
 			if(json != null){
 				try {
 					indicator = json.getString(KEY_SUCCESS);				
@@ -249,7 +249,7 @@ public class CreateIssueActivity extends Activity{
 		
 		@Override
         protected void onPreExecute(){
-			dialog = new ProgressDialog(CreateIssueActivity.this);
+			dialog = new ProgressDialog(PrototypeCreateIssueActivity.this);
 			dialog.setIndeterminate(true);
 			dialog.setTitle("Create Issue");
 			dialog.setMessage("Processing...");
@@ -259,7 +259,7 @@ public class CreateIssueActivity extends Activity{
 		
 		@Override
 		protected String doInBackground(String... params) {
-			JSONObject json = funcs.createIssueResolve(waterId, isTypeId, userComments, dispStatus, userAssigned, resolved, getApplicationContext());
+			JSONObject json = funcs.createIssueResolvePrototype(waterId, isTypeId, userComments, dispStatus, userAssigned, resolved, getApplicationContext());
 			if(json != null){
 				try {
 					indicator = json.getString(KEY_SUCCESS);				

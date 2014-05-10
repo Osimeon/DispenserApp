@@ -51,7 +51,23 @@
         </activity>  
         <activity
             android:name="com.dsw.dispenserapp.CreateIssueActivity">            
-        </activity>   
+        </activity>
+        
+        <activity
+            android:name="com.dsw.dispenserapp.PrototypeDistrictsActivity">            
+        </activity> 
+        <activity
+            android:name="com.dsw.dispenserapp.PrototypeSublocationsActivity">            
+        </activity>  
+        <activity
+            android:name="com.dsw.dispenserapp.PrototypeVillagesActivity">            
+        </activity> 
+        <activity
+            android:name="com.dsw.dispenserapp.PrototypeWaterpointsActivity">            
+        </activity>  
+        <activity
+            android:name="com.dsw.dispenserapp.PrototypeCreateIssueActivity">            
+        </activity>
     </application>
 
 </manifest>

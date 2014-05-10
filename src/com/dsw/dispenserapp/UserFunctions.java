@@ -28,6 +28,8 @@ public class UserFunctions {
     private static String count_tag = "waterpointscount";
     private static String create_tag = "createissue";
     private static String type_count = "issuetypecount";
+    private static String create_issue_prototype = "create_issue_prototype";
+    private static String create_issue_prototype_resolve = "create_issue_prototype_resolve";
     
     // constructor
     public UserFunctions(){
@@ -83,12 +85,56 @@ public class UserFunctions {
         }
     }
     
-  //Create an issue
+    //Create an issue - Prototype
+    public JSONObject createIssuePrototype(String wpId, String isType, String comments, String status, String userAssigned, String resolved, Context context){
+    	DbHandler db = new DbHandler(context);
+    	Users currentUser = db.getUser();
+    	List<NameValuePair> params = new ArrayList<NameValuePair>();
+    	params.add(new BasicNameValuePair("tag", create_issue_prototype));
+    	params.add(new BasicNameValuePair("wpId", wpId));
+    	params.add(new BasicNameValuePair("typeId", isType));
+    	params.add(new BasicNameValuePair("user", String.valueOf(currentUser.getStaffNumber())));
+    	params.add(new BasicNameValuePair("comments", comments));
+    	params.add(new BasicNameValuePair("status", status));
+    	params.add(new BasicNameValuePair("user_assigned", userAssigned));
+    	params.add(new BasicNameValuePair("resolved", resolved));
+    	JSONObject json = jsonParser.getJSONFromUrl(universalURL, params);
+    	if(json != null){
+        	return json;
+        }
+        else {
+        	return null;
+        }
+    }
+    
+    //Create an issue
     public JSONObject createIssueResolve(String wpId, String isType, String comments, String status, String userAssigned, String resolved, Context context){
     	DbHandler db = new DbHandler(context);
     	Users currentUser = db.getUser();
     	List<NameValuePair> params = new ArrayList<NameValuePair>();
     	params.add(new BasicNameValuePair("tag", "createresolve"));
+    	params.add(new BasicNameValuePair("wpId", wpId));
+    	params.add(new BasicNameValuePair("typeId", isType));
+    	params.add(new BasicNameValuePair("user", String.valueOf(currentUser.getStaffNumber())));
+    	params.add(new BasicNameValuePair("comments", comments));
+    	params.add(new BasicNameValuePair("status", status));
+    	params.add(new BasicNameValuePair("user_assigned", userAssigned));
+    	params.add(new BasicNameValuePair("resolved", resolved));
+    	JSONObject json = jsonParser.getJSONFromUrl(universalURL, params);
+    	if(json != null){
+        	return json;
+        }
+        else {
+        	return null;
+        }
+    }
+    
+    //Create an issue
+    public JSONObject createIssueResolvePrototype(String wpId, String isType, String comments, String status, String userAssigned, String resolved, Context context){
+    	DbHandler db = new DbHandler(context);
+    	Users currentUser = db.getUser();
+    	List<NameValuePair> params = new ArrayList<NameValuePair>();
+    	params.add(new BasicNameValuePair("tag", create_issue_prototype_resolve));
     	params.add(new BasicNameValuePair("wpId", wpId));
     	params.add(new BasicNameValuePair("typeId", isType));
     	params.add(new BasicNameValuePair("user", String.valueOf(currentUser.getStaffNumber())));

@@ -57,8 +57,8 @@ public class DashboardActivity extends Activity{
 			
 			@Override
 			public void onClick(View view) {
-				//Intent i = new Intent(DashboardActivity.this, DistrictsActivity.class);
-				//startActivity(i);
+				Intent i = new Intent(DashboardActivity.this, PrototypeDistrictsActivity.class);
+				startActivity(i);
 			}
 		});
 		
